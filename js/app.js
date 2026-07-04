@@ -1,3 +1,11 @@
+const startBtn = document.getElementById("startBtn");
+
+if (startBtn) {
+    startBtn.addEventListener("click", () => {
+        window.location.href = "levels.html";
+    });
+}
+
 function checkAnswer() {
     const answer = document.getElementById("answer").value.toUpperCase();
     const result = document.getElementById("result");
@@ -6,12 +14,15 @@ function checkAnswer() {
         localStorage.setItem("level1Completed", "true");
 
         result.innerHTML = "✅ Correct! Level 2 Unlocked!";
-        const achievement = document.getElementById("achievement");
-achievement.classList.add("show");
 
-setTimeout(() => {
-    achievement.classList.remove("show");
-}, 3000);
+        const achievement = document.getElementById("achievement");
+        if (achievement) {
+            achievement.classList.add("show");
+
+            setTimeout(() => {
+                achievement.classList.remove("show");
+            }, 3000);
+        }
 
         setTimeout(() => {
             window.location.href = "levels.html";
