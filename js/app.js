@@ -6,6 +6,12 @@ function checkAnswer() {
         localStorage.setItem("level1Completed", "true");
 
         result.innerHTML = "✅ Correct! Level 2 Unlocked!";
+        const achievement = document.getElementById("achievement");
+achievement.classList.add("show");
+
+setTimeout(() => {
+    achievement.classList.remove("show");
+}, 3000);
 
         setTimeout(() => {
             window.location.href = "levels.html";
