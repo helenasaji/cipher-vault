@@ -99,3 +99,19 @@ button:hover{
         0 0 15px #00ff88,
         0 0 30px #00ff88;
 }
+.achievement{
+    position:fixed;
+    top:20px;
+    right:-350px;
+    background:#00ff88;
+    color:#000;
+    padding:15px 20px;
+    border-radius:10px;
+    font-weight:bold;
+    transition:right .5s;
+    box-shadow:0 0 20px #00ff88;
+}
+
+.achievement.show{
+    right:20px;
+}
