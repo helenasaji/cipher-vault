@@ -115,3 +115,16 @@ button:hover{
 .achievement.show{
     right:20px;
 }
+.navbar{
+    width:100%;
+    padding:15px 25px;
+    background:#0d0d0d;
+    border-bottom:2px solid #00ff88;
+    box-sizing:border-box;
+}
+
+.navbar h2{
+    margin:0;
+    color:#00ff88;
+    text-shadow:0 0 10px #00ff88;
+}
