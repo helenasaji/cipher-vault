@@ -1,15 +1,16 @@
-const startBtn = document.getElementById("startBtn");
-
-startBtn.addEventListener("click", () => {
-    window.location.href = "levels.html";
-});
-
 function checkAnswer() {
     const answer = document.getElementById("answer").value.toUpperCase();
     const result = document.getElementById("result");
 
     if (answer === "HELLO") {
-        result.innerHTML = "✅ Correct! Level Complete!";
+        localStorage.setItem("level1Completed", "true");
+
+        result.innerHTML = "✅ Correct! Level 2 Unlocked!";
+
+        setTimeout(() => {
+            window.location.href = "levels.html";
+        }, 2000);
+
     } else {
         result.innerHTML = "❌ Wrong answer. Try again.";
     }
