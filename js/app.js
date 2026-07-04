@@ -15,7 +15,7 @@ setTimeout(() => {
 
         setTimeout(() => {
             window.location.href = "levels.html";
-        }, 2000);
+        }, 3500);
 
     } else {
         result.innerHTML = "❌ Wrong answer. Try again.";
