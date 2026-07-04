@@ -66,3 +66,36 @@ button:hover{
 #progressText{
     margin-top:10px;
 }
+body{
+    background:linear-gradient(-45deg,#000,#071a07,#000,#102510);
+    background-size:400% 400%;
+    animation:bgMove 10s infinite;
+    font-family:'Orbitron',sans-serif;
+}
+
+@keyframes bgMove{
+    0%{background-position:0% 50%;}
+    50%{background-position:100% 50%;}
+    100%{background-position:0% 50%;}
+}
+
+h1{
+    color:#00ff88;
+    text-shadow:
+        0 0 10px #00ff88,
+        0 0 20px #00ff88,
+        0 0 40px #00ff88;
+}
+
+button{
+    background:#00ff88;
+    color:black;
+    border:2px solid #00ff88;
+    transition:.3s;
+}
+
+button:hover{
+    box-shadow:
+        0 0 15px #00ff88,
+        0 0 30px #00ff88;
+}
