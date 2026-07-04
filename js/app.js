@@ -1,5 +1,13 @@
-const startBtn = document.getElementById("startBtn");
+function checkAnswer(){
 
-startBtn.addEventListener("click", () => {
-    alert("Mission Loading...");
-});
+const answer = document.getElementById("answer").value.toUpperCase();
+
+const result = document.getElementById("result");
+
+if(answer==="HELLO"){
+    result.innerHTML="✅ Correct! Level Complete!";
+}else{
+    result.innerHTML="❌ Wrong answer. Try again.";
+}
+
+}
