@@ -1,64 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Levels - Cipher Vault</title>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Levels - Cipher Vault</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
-  <nav class="navbar">
+
+<nav class="navbar">
     <h2>🔐 Cipher Vault</h2>
-  </nav>
+</nav>
 
 <div class="container">
-  <h1>🗂 Mission Select</h1>
-  <div class="progress-box">
-    <p>Mission Progress</p>
 
-    <div class="progress">
-        <div id="progressFill" class="progress-fill"></div>
+    <h1>🗂 Mission Select</h1>
+
+    <div class="progress-box">
+        <p>Mission Progress</p>
+
+        <div class="progress">
+            <div id="progressFill" class="progress-fill"></div>
+        </div>
+
+        <p id="progressText">0% Complete</p>
     </div>
 
-    <p id="progressText">0% Complete</p>
     <p id="score">Score: 0</p>
-  </div>
 
-  <button onclick="location.href='level1.html'">
-    Level 1 - Caesar Cipher
-  </button>
+    <button onclick="location.href='level1.html'">
+        Level 1 - Caesar Cipher
+    </button>
 
-  <button id="level2" disabled>
-    🔒 Level 2 - Morse Code
-  </button>
+    <br><br>
 
-  <button disabled>
-    🔒 Level 3 - Binary
-  </button>
+    <button id="level2" disabled>
+        🔒 Level 2 - Morse Code
+    </button>
+
+    <br><br>
+
+    <button disabled>
+        🔒 Level 3 - Binary
+    </button>
+
 </div>
 
 <script>
 const level2 = document.getElementById("level2");
 const progressFill = document.getElementById("progressFill");
 const progressText = document.getElementById("progressText");
+const scoreText = document.getElementById("score");
 
 let progress = 0;
+let score = 0;
 
+// Unlock Level 2 if Level 1 is completed
 if (localStorage.getItem("level1Completed") === "true") {
+
     level2.disabled = false;
     level2.innerHTML = "Level 2 - Morse Code";
+
     level2.onclick = function () {
         location.href = "level2.html";
     };
 
     progress = 33;
+    score = 100;
 }
 
+// Update Progress Bar
 progressFill.style.width = progress + "%";
 progressText.innerHTML = progress + "% Complete";
-}
+
+// Update Score
+scoreText.innerHTML = "Score: " + score;
 </script>
 
 </body>
 </html>
-
