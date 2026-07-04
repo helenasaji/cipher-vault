@@ -11,18 +11,30 @@
 <div class="container">
   <h1>🗂 Mission Select</h1>
 
-<button onclick="location.href='level1.html'">
+  <button onclick="location.href='level1.html'">
     Level 1 - Caesar Cipher
-</button>
+  </button>
 
-<button id="level2" disabled>
+  <button id="level2" disabled>
     🔒 Level 2 - Morse Code
-</button>
+  </button>
 
-<button disabled>
+  <button disabled>
     🔒 Level 3 - Binary
-</button>
+  </button>
 </div>
+
+<script>
+const level2 = document.getElementById("level2");
+
+if (localStorage.getItem("level1Completed") === "true") {
+    level2.disabled = false;
+    level2.innerHTML = "Level 2 - Morse Code";
+    level2.onclick = function () {
+        location.href = "level2.html";
+    };
+}
+</script>
 
 </body>
 </html>
