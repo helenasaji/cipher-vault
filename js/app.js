@@ -1,13 +1,16 @@
-function checkAnswer(){
+const startBtn = document.getElementById("startBtn");
 
-const answer = document.getElementById("answer").value.toUpperCase();
+startBtn.addEventListener("click", () => {
+    window.location.href = "levels.html";
+});
 
-const result = document.getElementById("result");
+function checkAnswer() {
+    const answer = document.getElementById("answer").value.toUpperCase();
+    const result = document.getElementById("result");
 
-if(answer==="HELLO"){
-    result.innerHTML="✅ Correct! Level Complete!";
-}else{
-    result.innerHTML="❌ Wrong answer. Try again.";
-}
-
+    if (answer === "HELLO") {
+        result.innerHTML = "✅ Correct! Level Complete!";
+    } else {
+        result.innerHTML = "❌ Wrong answer. Try again.";
+    }
 }
