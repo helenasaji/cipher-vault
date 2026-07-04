@@ -10,6 +10,15 @@
 
 <div class="container">
   <h1>🗂 Mission Select</h1>
+  <div class="progress-box">
+    <p>Mission Progress</p>
+
+    <div class="progress">
+        <div id="progressFill" class="progress-fill"></div>
+    </div>
+
+    <p id="progressText">0% Complete</p>
+  </div>
 
   <button onclick="location.href='level1.html'">
     Level 1 - Caesar Cipher
@@ -26,6 +35,10 @@
 
 <script>
 const level2 = document.getElementById("level2");
+const progressFill = document.getElementById("progressFill");
+const progressText = document.getElementById("progressText");
+
+let progress = 0;
 
 if (localStorage.getItem("level1Completed") === "true") {
     level2.disabled = false;
@@ -33,6 +46,12 @@ if (localStorage.getItem("level1Completed") === "true") {
     level2.onclick = function () {
         location.href = "level2.html";
     };
+
+    progress = 33;
+}
+
+progressFill.style.width = progress + "%";
+progressText.innerHTML = progress + "% Complete";
 }
 </script>
 
